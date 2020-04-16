@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.aixuexi.xiuchun.dao.TestMybatisDao">
+
+    <resultMap id="BaseResultMap" type="com.aixuexi.xiuchun.entity.TestMybatis">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="code" property="code" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="select"  resultMap="BaseResultMap">
+        SELECT * from test_mybatis
+    </select>
+
+    <update id="updateName">
+        update test_mybatis set name = #{name} where id = #{id}
+    </update>
+
+    <update id="updateCode">
+        update test_mybatis set code = #{code} where id = #{id}
+    </update>
+
+</mapper>
+
